@@ -1,0 +1,27 @@
+{
+  "name": "vitest-transitive-repro",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "vitest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@nivo/treemap": "^0.88.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@testing-library/dom": "^10.4.0",
+    "@testing-library/react": "^16.1.0",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "jsdom": "^26.0.0",
+    "typescript": "^5.7.3",
+    "vitest": "3.0.0-beta.4"
+  }
+}
