@@ -1,16 +1,15 @@
 import { defineConfig } from "vitest/config";
+import { execSync } from "node:child_process";
 
-// const dependencies = ["@nivo/treemap"];
-// const dependencies = ["@nivo/core"];
-// const dependencies = ["@nivo/treemap", "@nivo/core"];
-const dependencies = ["@nivo/core", "@nivo/treemap"];
+const nivoCorePath = execSync('pnpm why --parseable @nivo/core', { encoding: 'utf-8' }).split('\n')[1]
 
 export default defineConfig({
   test: {
     environment: "jsdom",
     globals: true,
-    server: {
-      deps: { inline: dependencies },
-    },
+    alias: {
+      "@nivo/treemap": "@nivo/treemap/dist/nivo-treemap.es.js",
+      "@nivo/core": nivoCorePath + "/dist/nivo-core.es.js",
+    }
   },
 });
